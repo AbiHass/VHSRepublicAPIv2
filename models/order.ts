@@ -8,11 +8,16 @@ interface IShippingDetails {
 }
 
 interface IItem {
-    desc: string;
+/*     desc: string;
     id: number;
     price: number;
     quantity: number;
-    title: string;
+    title: string; */
+    director: string;
+    id: number;
+    price: number;
+    quantity: number;
+    name: string;
 }
 
 export interface IOrder {
@@ -45,7 +50,7 @@ const OrderSchema = new Schema<IOrder>({
     },
     items: {
         type:[{
-            desc: {
+            director: {
                 type: String,
                 required: true
             },
@@ -61,7 +66,7 @@ const OrderSchema = new Schema<IOrder>({
                 type: Number,
                 required: true
             },
-            title: {
+            name: {
                 type:String,
                 required: true
             }
